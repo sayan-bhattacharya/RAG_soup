@@ -16,14 +16,14 @@ import json
 
 
 
-with open("config.json", "r") as file:
-    config = json.load(file)
+#with open("config.json", "r") as file:
+ #   config = json.load(file)
 
-GOOGLE_API_KEY = config["GOOGLE_API_KEY"]
-genai.configure(api_key=GOOGLE_API_KEY)
+#GOOGLE_API_KEY = config["GOOGLE_API_KEY"]
+#genai.configure(api_key=GOOGLE_API_KEY)
 
 # Retrieve the API key from Streamlit secrets
-#GOOGLE_API_KEY = st.secrets["general"]["GOOGLE_API_KEY"]
+GOOGLE_API_KEY = st.secrets["general"]["GOOGLE_API_KEY"]
 
 # Use the API key for configuration
 #genai.configure(api_key=GOOGLE_API_KEY)
