@@ -10,11 +10,15 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
-load_dotenv()
-os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+#load_dotenv()
+#os.getenv("GOOGLE_API_KEY")
+#genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+# Retrieve the API key from Streamlit secrets
+GOOGLE_API_KEY = st.secrets["general"]["GOOGLE_API_KEY"]
 
+# Use the API key for configuration
+genai.configure(api_key=GOOGLE_API_KEY)
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
