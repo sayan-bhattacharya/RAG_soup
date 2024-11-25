@@ -12,6 +12,7 @@ import re
 import logging
 import shutil
 from pathlib import Path
+os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
 
 # Configure logging
 logging.basicConfig(
